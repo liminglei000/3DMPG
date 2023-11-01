@@ -28,7 +28,7 @@ def data_preparation_protein_all(pseq_path, task):
     protein_info = np.loadtxt(pseq_path, delimiter='\t', dtype=str)
     for i in trange(idx.shape[0]):
         pro_name = protein_info[int(idx[i]), 0]
-        point_data = np.loadtxt('../dataset/' + task + '/protein_point_dim/' + pro_name + '.txt')
+        point_data = np.loadtxt('dataset/' + task + '/protein_point_dim/' + pro_name + '.txt')
 
         if point_data.shape[0] >= Protein_Max_Length:
             protein_point = point_data[:Protein_Max_Length, :6]
